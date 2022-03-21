@@ -1,0 +1,28 @@
+server:
+  port: 10002
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/zoll_extends?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  http:
+    multipart:
+      location: E://zoll.data//fileTargetDir//
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/, classpath:/static/, classpath:/public/, file:${spring.http.multipart.location}
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+report:
+  server:
+    log: E://zoll.data//log
+    jsonDir : E://zoll.data\\zoll
+    jsonTargetDir : E:\\zoll.data\\zollTarget
+    twelveleadDir: E:\\zoll.data\\twelvelead
+    fileTargetDir: E:\\zoll.data\\fileTargetDir
+    snapshotDir: E:\\zoll.data\\snapshot
